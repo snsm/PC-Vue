@@ -132,14 +132,14 @@ export default {
     background: #ddd;
   }
   .button {
-    background: #4fc08d;
+    background: #f4645f;
     color: #fff;
     display: inline-block;
     padding: 10px 20px;
     cursor: pointer;
   }
   .button:hover {
-    background: #4fc08d;
+    background: #f4645f;
   }
   .g-form {
 
