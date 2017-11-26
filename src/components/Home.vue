@@ -4,15 +4,15 @@
       <div class="index-left">
         <div class="index-left-block">
           <h2>全部产品</h2>
-          <template >
-            <h3>图书产品</h3>
+          <template v-for="menu in menu_column">
+            <h3>{{ menu.menu_name }}</h3>
             <ul>
-              <li >
-                <a href="#"></a>
-                <span class="hot-tag">HOT</span>
+              <li v-for="type in menu.menu_type">
+                <a :href="type.url">{{ type.name }}</a>
+                <span class="hot-tag" v-if="type.is_hot == '1'">HOT</span>
               </li>
             </ul>
-            <div class="hr"></div>
+            <div class="hr" v-if="!menu.last"></div>
           </template>
         </div>
         <div class="index-left-block lastest-news">
@@ -48,8 +48,21 @@ export default {
   name: 'Home',
   data () {
     return {
-
+        menu_column: []
     }
+  },
+  methods: {
+    getMenuData(){
+        this.axios.get("/api/menu").then((response) => {
+            console.log(response.data);
+            this.menu_column = response.data.data.result;
+        }).catch((error)=> {
+            console.log(error);
+        });
+    }
+  },
+  created() {
+      this.getMenuData();
   }
 }
 </script>
