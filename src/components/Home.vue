@@ -25,7 +25,18 @@
         </div>
       </div>
       <div class="index-right">
-
+        <slide-show></slide-show>
+        <div class="index-board-list">
+          <div class="index-board-item" >
+            <div class="index-board-item-inner" >
+              <h2>义门陈酒</h2>
+              <p>0000</p>
+              <div class="index-board-button">
+                <a>立即购买</a>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="index-board-list">
           <div class="index-board-item" >
             <div class="index-board-item-inner" >
@@ -43,7 +54,7 @@
 </template>
 
 <script>
-
+import SlideShow from '../components/pages/SlideShow'
 export default {
   name: 'Home',
   data () {
@@ -63,6 +74,9 @@ export default {
   },
   created() {
       this.getMenuData();
+  },
+  components: {
+      SlideShow
   }
 }
 </script>
