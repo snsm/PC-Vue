@@ -83,8 +83,8 @@ export default {
     color: #444;
   }
   .app-head {
-    background: #363636;
-    color: #b2b2b2;
+    background: #db3e3e;
+    color: #ffffff;
     height: 90px;
     line-height: 90px;
     width: 100%;
@@ -97,8 +97,8 @@ export default {
     float: left;
   }
   .app-head-inner img {
-    width: 50px;
-    margin-top: 20px;
+    width: 75px;
+    margin-top: 5px;
   }
   .head-nav {
     float: right;
